@@ -43,6 +43,13 @@ function SendQuestion(){
         }
         result.scrollTop = result.scrollHeight;
     })
+    .catch((error)=>console.error("Error",error))
+    .finally(()=> {
+        inputQuestion.value = "";
+        inputQuestion.disabled = false;
+        inputQuestion.focus();
+
+    });
 
     if (result.value) result.value += "\n\n\n";
 
